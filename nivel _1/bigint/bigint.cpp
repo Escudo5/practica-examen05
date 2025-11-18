@@ -6,7 +6,7 @@
 /*   By: smarquez <smarquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 17:55:23 by smarquez          #+#    #+#             */
-/*   Updated: 2025/11/17 17:55:37 by smarquez         ###   ########.fr       */
+/*   Updated: 2025/11/18 12:22:03 by smarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,12 @@ bigint::bigint()
 // Constructor desde un entero -> convierte el número a string
 bigint::bigint(unsigned int n)
 {
+    if (n == 0)
+    {
+        this->_str = "0";
+        return;
+    }
+    
     std::ostringstream os;
     os << n;
     this->_str = os.str();
@@ -159,11 +165,6 @@ bigint& bigint::operator>>=(const bigint& obj)
     size_t len = this->_str.size();                         // longitud actual
 
     // si pide borrar tantas o más posiciones que la longitud -> resultado 0
-    if (shift >= len)
-    {
-        this->_str = "0";
-        return *this;
-    }
 
     // borrar exactamente 'shift' caracteres desde el final
     this->_str.erase(this->_str.size() - shift, this->_str.size());
