@@ -6,7 +6,7 @@
 /*   By: smarquez <smarquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 17:55:23 by smarquez          #+#    #+#             */
-/*   Updated: 2025/11/18 12:22:03 by smarquez         ###   ########.fr       */
+/*   Updated: 2025/11/19 13:07:42 by smarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ void bigint::validate()
     //Con el erase se elimina los '0' i caracteres
 }
 
-bigint::bigint()
+bigint::bigint() : _str("0")
 {
-    this->_str = "0";
+    // this->_str = "0";
 }
 
 // Constructor desde un entero -> convierte el número a string
