@@ -32,7 +32,7 @@ static int count_neighbors(char *board, int width, int heigh, int x, int y)
             int neighbor_x = x + dx;
             int neighbor_y = y + dy;
             if (neighbor_x >= 0 && neighbor_x < width && neighbor_y >= 0 && neighbor_y < heigh)
-                count += board[neighbor_y * width + x];
+                count += board[neighbor_y * width + neighbor_x];
 
         }
     }
